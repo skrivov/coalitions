@@ -1,0 +1,12 @@
+{
+    "relations": {
+        "ISIS": { "name": "Islamic State of Iraq and Syria", "relations": { "ISIS": 1, "ISF": -1, "USC": -1, "KF": -1, "PMF": -1, "HZB": -1, "IRN": -1, "SGF": -1 } },
+        "ISF": { "name": "Iraqi Security Forces", "relations": { "ISIS": -1, "ISF": 1, "USC": 0, "KF": 1, "PMF": -1, "HZB": -1, "IRN": 1, "SGF": 0 } },
+        "USC": { "name": "United States and Western Coalition", "relations": { "ISIS": -1, "ISF": 0, "USC": 1, "KF": 1, "PMF": -1, "HZB": -1, "IRN": 0, "SGF": 0 } },
+        "KF": { "name": "Kurdish Forces", "relations": { "ISIS": -1, "ISF": 1, "USC": 1, "KF": 1, "PMF": 0, "HZB": 0, "IRN": 0, "SGF": 0 } },
+        "PMF": { "name": "Popular Mobilization Forces", "relations": { "ISIS": -1, "ISF": -1, "USC": -1, "KF": 0, "PMF": 1, "HZB": 0, "IRN": 1, "SGF": 0 } },
+        "HZB": { "name": "Hezbollah", "relations": { "ISIS": -1, "ISF": -1, "USC": -1, "KF": 0, "PMF": 0, "HZB": 1, "IRN": 1, "SGF": 0 } },
+        "IRN": { "name": "Iran", "relations": { "ISIS": -1, "ISF": 1, "USC": 0, "KF": 0, "PMF": 1, "HZB": 1, "IRN": 1, "SGF": 1 } },
+        "SGF": { "name": "Syrian Government Forces", "relations": { "ISIS": -1, "ISF": 0, "USC": 0, "KF": 0, "PMF": 0, "HZB": 0, "IRN": 1, "SGF": 1 } }
+    }
+}

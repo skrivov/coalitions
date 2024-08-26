@@ -1,0 +1,23 @@
+{
+    "Propose alliance": {
+        "condition": "You can propose an alliance with any agent."
+    },
+    "Accept alliance": {
+        "condition": "You can accept an alliance only if you received a proposal for an alliance in the previous step."
+    },
+    "Reject alliance": {
+        "condition": "You can reject an alliance only if you received a proposal for an alliance in the previous step."
+    },
+    "Break alliance": {
+        "condition": "You can break an alliance with any current ally."
+    },
+    "Declare war": {
+        "condition": "You can declare war on any agent."
+    },
+    "Public statement": {
+        "condition": "You can make a public statement at any time."
+    },
+    "NONE": {
+        "condition": "You can choose not to send any message."
+    }
+}

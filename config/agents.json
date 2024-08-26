@@ -1,0 +1,122 @@
+[
+    {
+        "alias": "ISIS",
+        "name": "Islamic State of Iraq and Syria",
+        "type": "Militant Group",
+        "identity": "A radical militant Sunni group with a goal of establishing a caliphate through violent means and strict interpretation of Islamic law.",
+        "available_actions": [
+            "military attack",
+            "recruitment",
+            "propaganda"
+        ],
+        "military_power": 30,
+        "economic_power": 15,
+        "goal": "Expand territory",
+        "description": "The primary adversary in the conflict."
+    },
+    {
+        "alias": "ISF",
+        "name": "Iraqi Security Forces",
+        "type": "Security Forces",
+        "identity": "The official military force of Iraq, primarily composed of both Sunni and Shia personnel, dedicated to maintaining law and order and combating insurgency within its borders.",
+        "available_actions": [
+            "defense",
+            "patrol",
+            "military attack"
+        ],
+        "military_power": 50,
+        "economic_power": 40,
+        "goal": "Defend against insurgents",
+        "description": "The official military and police forces of Iraq."
+    },
+    {
+        "alias": "USC",
+        "name": "United States and Western Coalition",
+        "type": "Coalition Forces",
+        "identity": "A coalition of Western nations focused on counter-terrorism and supporting allied forces through advanced military capabilities and economic aid.",
+        "available_actions": [
+            "airstrike",
+            "special operations",
+            "military aid"
+        ],
+        "military_power": 80,
+        "economic_power": 70,
+        "goal": "Support local allies",
+        "description": "Includes the US, UK, France, and other Western allies providing airstrikes, special forces, and military support."
+    },
+    {
+        "alias": "KF",
+        "name": "Kurdish Forces",
+        "type": "Regional Forces",
+        "identity": "A regional force, primarily Sunni, seeking autonomy and protection of their ethnic group through both defensive and offensive operations.",
+        "available_actions": [
+            "defense",
+            "military attack",
+            "intelligence gathering"
+        ],
+        "military_power": 40,
+        "economic_power": 30,
+        "goal": "Secure autonomy",
+        "description": "Includes the Kurdish Peshmerga and Syrian Democratic Forces (SDF), primarily composed of the Kurdish YPG and allied militias."
+    },
+    {
+        "alias": "PMF",
+        "name": "Popular Mobilization Forces",
+        "type": "Militia",
+        "identity": "A coalition of predominantly Shia militias with strong religious ties, focusing on expanding influence and supporting allied regional forces.",
+        "available_actions": [
+            "military attack",
+            "recruitment",
+            "defense"
+        ],
+        "military_power": 45,
+        "economic_power": 25,
+        "goal": "Expand influence",
+        "description": "A coalition of predominantly Shia militias, including groups influenced by Muqtada al-Sadr, with Iranian support."
+    },
+    {
+        "alias": "HZB",
+        "name": "Hezbollah",
+        "type": "Militant Group",
+        "identity": "A Shia militant group with strong ideological ties to regional powers, engaged in supporting allies and conducting asymmetric warfare.",
+        "available_actions": [
+            "military attack",
+            "intelligence gathering",
+            "recruitment"
+        ],
+        "military_power": 35,
+        "economic_power": 20,
+        "goal": "Support allies",
+        "description": "A Lebanese Shia militant group with a significant role in Syria, often acting as an extension of Iranian influence."
+    },
+    {
+        "alias": "IRN",
+        "name": "Iran",
+        "type": "Nation",
+        "identity": "A Shia-majority nation-state with a focus on regional stability and influence, supporting allied groups and engaging in both direct and indirect military actions.",
+        "available_actions": [
+            "military aid",
+            "economic aid",
+            "intelligence operations"
+        ],
+        "military_power": 60,
+        "economic_power": 55,
+        "goal": "Stabilize region",
+        "description": "Directly supports the ISF, PMF, and other allied groups, including Hezbollah."
+    },
+    {
+        "alias": "SGF",
+        "name": "Syrian Government Forces",
+        "type": "Government Forces",
+        "identity": "A government military force aiming to regain control over contested areas and eliminate insurgent threats with support from international allies. Predominantly Alawite (Shia sect).",
+        "available_actions": [
+            "military attack",
+            "defense",
+            "airstrike"
+        ],
+        "military_power": 55,
+        "economic_power": 50,
+        "goal": "Regain control",
+        "description": "Led by Bashar al-Assad, supported by Russia and Iran, fighting ISIS within Syria."
+    }
+]
