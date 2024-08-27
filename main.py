@@ -104,9 +104,8 @@ if __name__ == "__main__":
     # Initialize analytics with desired measures
     measures = {
         "MSE": measure_mse,
-        "Cosine Similarity": measure_cosine_similarity,
-        "Jaccard Similarity": measure_jaccard_similarity,
-        "Pearson Correlation": measure_pearson_correlation
+        "Cosine Similarity": measure_cosine_similarity 
+        
     }
     relations_end_file_path = path.join(script_dir, "config/relations_end.json")
     analytics = Analytics(relations_file_path, relations_end_file_path, measures, output_dir="output")
