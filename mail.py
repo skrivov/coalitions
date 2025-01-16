@@ -1,11 +1,35 @@
-class Mail:
-    def __init__(self):
-        self.private_mailbox = {}
-        self.public_statements = []
-        self.temp_private_mailbox = {}
-        self.temp_public_statements = []
+"""
+mail.py
 
-    def send(self, message):
+Handles sending and reading messages between agents, as well as public statements.
+"""
+
+from __future__ import annotations
+from message import Message
+
+
+class Mail:
+    """
+    A mailbox system for managing private messages and public statements.
+    """
+
+    def __init__(self) -> None:
+        """
+        Initializes empty mailboxes for private and public messages.
+        """
+        self.private_mailbox: dict[str, list[Message]] = {}
+        self.public_statements: list[Message] = []
+        self.temp_private_mailbox: dict[str, list[Message]] = {}
+        self.temp_public_statements: list[Message] = []
+
+    def send(self, message: Message) -> None:
+        """
+        Sends a message, either to a specific recipient (private mailbox) or
+        to the public statements list.
+
+        Args:
+            message (Message): The message to be sent.
+        """
         if message.recipient == "PUBLIC":
             self.temp_public_statements.append(message)
         else:
@@ -13,15 +37,31 @@ class Mail:
                 self.temp_private_mailbox[message.recipient] = []
             self.temp_private_mailbox[message.recipient].append(message)
 
-    def read(self, alias):
-        messages = self.private_mailbox.get(alias, [])
-        # print(messages)
-        return messages
+    def read(self, alias: str) -> list[Message]:
+        """
+        Reads and returns all private messages for a specific alias.
 
-    def read_public_statements(self):
+        Args:
+            alias (str): The alias of the agent to retrieve messages for.
+
+        Returns:
+            list[Message]: A list of messages in the private mailbox for this alias.
+        """
+        return self.private_mailbox.get(alias, [])
+
+    def read_public_statements(self) -> list[Message]:
+        """
+        Returns all public statements.
+
+        Returns:
+            list[Message]: A list of public messages.
+        """
         return self.public_statements
 
-    def finalize(self):
+    def finalize(self) -> None:
+        """
+        Moves all temporary messages to the main mailboxes and clears the temporary storage.
+        """
         # Move temp messages to main mailbox
         for alias, messages in self.temp_private_mailbox.items():
             if alias not in self.private_mailbox:

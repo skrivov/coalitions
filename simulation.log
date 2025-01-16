@@ -18,32 +18,32 @@
     IRN    -1     1     0     0     1     1     1     1
     SGF    -1     0     0     0     0     0     1     1
  Messages Sent:
- Type: Declare war, From: ISIS, To: ISF, Content: We will not tolerate your presence or actions in our territory. Prepare for war!
- Type: Propose alliance, From: ISF, To: USC, Content: I would like to propose an alliance for our mutual interests in combating insurgency and maintain...
- Type: Propose alliance, From: USC, To: ISF, Content: We recognize the importance of our shared commitment to restore stability and combat insurgency i...
- Type: Propose alliance, From: KF, To: PMF, Content: We acknowledge the current regional dynamics and the challenges we face from extremist groups. As...
- Type: Propose alliance, From: PMF, To: HZB, Content: We share the same sacred mission and values. Let's unite our forces to strengthen our influence a...
- Type: Propose alliance, From: HZB, To: PMF, Content: We should strengthen our collaboration against common threats and work together for regional stab...
- Type: Propose alliance, From: IRN, To: USC, Content: We recognize the common goal of stabilizing the region and are open to discussion on how we can c...
- Type: Propose alliance, From: SGF, To: USC, Content: We acknowledge the current situation and recognize that despite our differences, our common goal ...
+ Type: Declare war, From: ISIS, To: ISF, Content: We will advance our operations to reclaim territory that is rightfully ours. Stand in our way, an...
+ Type: Propose alliance, From: ISF, To: USC, Content: We recognize our shared interest in combating insurgency and maintaining regional stability. We w...
+ Type: Propose alliance, From: USC, To: ISF, Content: The USC wishes to strengthen our collaboration against common threats and enhance security in the...
+ Type: Propose alliance, From: KF, To: PMF, Content: We are looking to strengthen our position and secure our autonomy. As fellow regional forces, we ...
+ Type: Propose alliance, From: PMF, To: HZB, Content: We seek to strengthen our ties and operate collectively against our common adversaries. Let us di...
+ Type: Propose alliance, From: HZB, To: PMF, Content: We should strengthen our ties and collaborate further to ensure the stability and security of our...
+ Type: Propose alliance, From: IRN, To: USC, Content: We recognize the importance of regional stability and the potential for collaboration against com...
+ Type: Propose alliance, From: SGF, To: ISF, Content: We acknowledge your capabilities and would like to explore potential collaboration against common...
  Actions Taken:
- Agent: ISIS, Action: military attack, Object: ISF
- Agent: ISF, Action: military attack, Object: ISIS
+ Agent: ISIS, Action: military attack, Object: KF
+ Agent: ISF, Action: defense, Object: ISIS
  Agent: USC, Action: military aid, Object: ISF
  Agent: KF, Action: military attack, Object: ISIS
  Agent: PMF, Action: recruitment, Object: IRN
- Agent: HZB, Action: NONE, Object: PMF
+ Agent: HZB, Action: support, Object: PMF
  Agent: IRN, Action: military aid, Object: PMF
  Agent: SGF, Action: military attack, Object: ISIS
  Agents' State Variables:
- ISIS - Military Power: 27.0, Economic Power: 14.2
- ISF - Military Power: 52.5, Economic Power: 40.8
- USC - Military Power: 81.6, Economic Power: 70.7
- KF - Military Power: 41.2, Economic Power: 30.3
+ ISIS - Military Power: 27.0, Economic Power: 13.5
+ ISF - Military Power: 52.5, Economic Power: 40.0
+ USC - Military Power: 80.0, Economic Power: 70.0
+ KF - Military Power: 42.0, Economic Power: 30.0
  PMF - Military Power: 45.0, Economic Power: 26.2
  HZB - Military Power: 35.0, Economic Power: 20.0
- IRN - Military Power: 60.6, Economic Power: 53.9
- SGF - Military Power: 56.1, Economic Power: 50.5
+ IRN - Military Power: 63.0, Economic Power: 55.0
+ SGF - Military Power: 57.8, Economic Power: 50.0
  Relations Matrix:
          ISIS   ISF   USC    KF   PMF   HZB   IRN   SGF
    ISIS     1    -1    -1    -1    -1    -1    -1    -1
@@ -57,158 +57,236 @@
  MSE: 0.31
  Cosine Similarity: 0.77
  Messages Sent:
- Type: Declare war, From: ISIS, To: ISF, Content: We will not tolerate your presence in our territories any longer. Prepare for confrontation.
- Type: Accept alliance, From: ISF, To: USC, Content: We appreciate your proposal for an alliance to restore stability and combat our common threats. W...
- Type: Accept alliance, From: USC, To: ISF, Content: We appreciate your proposal for an alliance aimed at combating insurgency and maintaining stabili...
- Type: Propose alliance, From: KF, To: PMF, Content: We have considered the current situation and believe that collaboration between our forces could ...
- Type: Accept alliance, From: PMF, To: HZB, Content: We appreciate your proposal to strengthen our collaboration against common threats. Let's discuss...
- Type: Accept alliance, From: HZB, To: PMF, Content: We accept your proposal for a strategic alliance between PMF and HZB. Together, we will strengthe...
- Type: Propose alliance, From: IRN, To: USC, Content: We acknowledge the importance of a collaborative approach to regional stability. In light of our ...
- Type: Propose alliance, From: SGF, To: ISF, Content: We seek to strengthen our forces against the common insurgent threats and propose an alliance to ...
+ Type: Declare war, From: ISIS, To: ISF, Content: We will not tolerate your presence any longer. It is time to reclaim our territory without your i...
+ Type: Declare war, From: ISF, To: ISIS, Content: We will not allow you to reclaim any territory; any advance will be met with strong resistance. W...
+ Type: Accept alliance, From: USC, To: ISF, Content: We appreciate your proposal for a formal alliance to combat insurgency and maintain regional stab...
+ Type: Propose alliance, From: KF, To: PMF, Content: We recognize the potential for cooperation between our forces in the face of common threats. Give...
+ Type: Accept alliance, From: PMF, To: HZB, Content: We agree with your assessment of the importance of strengthening our ties. Our forces can greatly...
+ Type: Accept alliance, From: HZB, To: PMF, Content: We appreciate your proposal for alliance and are eager to strengthen our collaboration against co...
+ Type: Propose alliance, From: IRN, To: USC, Content: We seek to stabilize the region and believe that working together could benefit our mutual intere...
+ Type: Declare war, From: SGF, To: ISIS, Content: The Syrian Government Forces declare war on ISIS due to their continued insurgency and threat to ...
  Actions Taken:
- Agent: ISIS, Action: military attack, Object: ISF
+ Agent: ISIS, Action: military attack, Object: USC
  Agent: ISF, Action: defense, Object: ISIS
  Agent: USC, Action: military aid, Object: ISF
- Agent: KF, Action: defense, Object: ISF
+ Agent: KF, Action: intelligence gathering, Object: USC
  Agent: PMF, Action: NONE, Object: KF
  Agent: HZB, Action: NONE, Object: PMF
  Agent: IRN, Action: military aid, Object: PMF
  Agent: SGF, Action: military attack, Object: ISIS
  Agents' State Variables:
- ISIS - Military Power: 24.3, Economic Power: 12.8
- ISF - Military Power: 53.5, Economic Power: 41.2
- USC - Military Power: 82.4, Economic Power: 70.7
- KF - Military Power: 41.6, Economic Power: 30.3
- PMF - Military Power: 45.5, Economic Power: 26.2
+ ISIS - Military Power: 25.6, Economic Power: 13.0
+ ISF - Military Power: 53.5, Economic Power: 40.0
+ USC - Military Power: 78.4, Economic Power: 70.0
+ KF - Military Power: 42.4, Economic Power: 30.0
+ PMF - Military Power: 46.4, Economic Power: 26.8
  HZB - Military Power: 35.0, Economic Power: 20.0
- IRN - Military Power: 60.6, Economic Power: 53.9
- SGF - Military Power: 57.2, Economic Power: 51.0
+ IRN - Military Power: 63.6, Economic Power: 55.0
+ SGF - Military Power: 58.3, Economic Power: 50.0
  Relations Matrix:
          ISIS   ISF   USC    KF   PMF   HZB   IRN   SGF
    ISIS     1    -1    -1    -1    -1    -1    -1    -1
-    ISF    -1     1     1     1    -1    -1     1     0
-    USC    -1     1     1     1    -1    -1     0     0
+    ISF    -1     1     0     1    -1    -1     1     0
+    USC    -1     0     1     1    -1    -1     0     0
      KF    -1     1     1     1     0     0     0     0
     PMF    -1    -1    -1     0     1     1     1     0
     HZB    -1    -1    -1     0     1     1     1     0
     IRN    -1     1     0     0     1     1     1     1
     SGF    -1     0     0     0     0     0     1     1
- MSE: 0.25
- Cosine Similarity: 0.83
+ MSE: 0.28
+ Cosine Similarity: 0.80
  Messages Sent:
- Type: Declare war, From: ISIS, To: ISF, Content: We will continue our struggle against your forces until we establish our rightful caliphate. Prep...
- Type: Accept alliance, From: ISF, To: SGF, Content: We appreciate your proposal for an alliance aimed at strengthening our forces against common insu...
- Type: Accept alliance, From: USC, To: IRN, Content: We appreciate your recognition of the common goal of stabilizing the region and would like to fur...
- Type: Propose alliance, From: KF, To: PMF, Content: We would like to propose an alliance based on our mutual interests and the goal of securing our r...
- Type: Propose alliance, From: PMF, To: KF, Content: We recognize the potential for collaboration between our forces in light of the current threats i...
- Type: Propose alliance, From: HZB, To: KF, Content: We recognize the importance of regional stability and suggest a discussion on potential collabora...
- Type: Propose alliance, From: IRN, To: USC, Content: We seek to work together to promote regional stability and combat our common adversaries. Let us ...
- Type: Propose alliance, From: SGF, To: ISF, Content: We acknowledge the need for a unified front against insurgent threats. Despite past tensions, it ...
+ Type: Declare war, From: ISIS, To: ISF, Content: Your declaration of war has been noted. We will not back down in our pursuit to expand our caliph...
+ Type: Declare war, From: ISF, To: ISIS, Content: We are prepared to defend our territory and the people of Iraq. Your declaration of war will not ...
+ Type: Accept alliance, From: USC, To: ISF, Content: We appreciate your proposal for a formal alliance and recognize our shared interest in combating ...
+ Type: Propose alliance, From: KF, To: PMF, Content: We recognize our shared interests in the region and propose to strengthen our collaboration to se...
+ Type: Propose alliance, From: PMF, To: KF, Content: We see the potential for collaboration in addressing common threats and enhancing our positions. ...
+ Type: Propose alliance, From: HZB, To: KF, Content: We recognize the importance of establishing communication and potential cooperation between our f...
+ Type: Propose alliance, From: IRN, To: USC, Content: I propose we strengthen our collaboration to ensure regional stability while addressing the threa...
+ Type: Propose alliance, From: SGF, To: ISF, Content: We recognize the importance of combating the threat posed by ISIS and are interested in discussin...
  Actions Taken:
- Agent: ISIS, Action: military attack, Object: USC
- Agent: ISF, Action: defense, Object: ISIS
+ Agent: ISIS, Action: military attack, Object: ISF
+ Agent: ISF, Action: military attack, Object: ISIS
  Agent: USC, Action: military aid, Object: ISF
  Agent: KF, Action: military attack, Object: ISIS
  Agent: PMF, Action: NONE, Object: KF
- Agent: HZB, Action: support alliance negotiation, Object: PMF
+ Agent: HZB, Action: NONE, Object: PMF
  Agent: IRN, Action: military aid, Object: PMF
  Agent: SGF, Action: military attack, Object: ISIS
  Agents' State Variables:
- ISIS - Military Power: 21.9, Economic Power: 11.5
- ISF - Military Power: 54.4, Economic Power: 41.6
- USC - Military Power: 83.2, Economic Power: 70.7
- KF - Military Power: 42.4, Economic Power: 30.3
- PMF - Military Power: 45.9, Economic Power: 26.4
+ ISIS - Military Power: 23.1, Economic Power: 11.7
+ ISF - Military Power: 56.2, Economic Power: 40.0
+ USC - Military Power: 78.4, Economic Power: 70.0
+ KF - Military Power: 43.3, Economic Power: 30.0
+ PMF - Military Power: 47.7, Economic Power: 27.3
  HZB - Military Power: 35.0, Economic Power: 20.0
- IRN - Military Power: 60.9, Economic Power: 53.4
- SGF - Military Power: 58.4, Economic Power: 51.5
+ IRN - Military Power: 64.3, Economic Power: 55.0
+ SGF - Military Power: 60.1, Economic Power: 50.0
+ Relations Matrix:
+         ISIS   ISF   USC    KF   PMF   HZB   IRN   SGF
+   ISIS     1    -1    -1    -1    -1    -1    -1    -1
+    ISF    -1     1     0     1    -1    -1     1     0
+    USC    -1     0     1     1    -1    -1     0     0
+     KF    -1     1     1     1     0     0     0     0
+    PMF    -1    -1    -1     0     1     1     1     0
+    HZB    -1    -1    -1     0     1     1     1     0
+    IRN    -1     1     0     0     1     1     1     1
+    SGF    -1     0     0     0     0     0     1     1
+ MSE: 0.28
+ Cosine Similarity: 0.80
+ Messages Sent:
+ Type: Declare war, From: ISIS, To: ISF, Content: We are aware of your declarations of war against us. We will intensify our efforts to reclaim our...
+ Type: Accept alliance, From: ISF, To: USC, Content: We acknowledge your willingness to collaborate and would like to formalize our alliance against t...
+ Type: Accept alliance, From: USC, To: ISF, Content: We acknowledge your proposal for a formal alliance to combat insurgency and maintain regional sta...
+ Type: Accept alliance, From: KF, To: PMF, Content: We appreciate your proposal for collaboration and see the potential benefits for both of our forc...
+ Type: Propose alliance, From: PMF, To: KF, Content: We are open to exploring the potential for collaboration to secure our mutual interests in the fa...
+ Type: Propose alliance, From: HZB, To: KF, Content: We recognize your efforts towards autonomy and stability in the region. Given our common interest...
+ Type: Propose alliance, From: IRN, To: USC, Content: We believe that regional stability is essential for the prosperity of our peoples. Let's explore ...
+ Type: Propose alliance, From: SGF, To: ISF, Content: We recognize the importance of maintaining stability in the region and propose a joint operation ...
+ Actions Taken:
+ Agent: ISIS, Action: military attack, Object: ISF
+ Agent: ISF, Action: defense, Object: ISIS
+ Agent: USC, Action: military aid, Object: ISF
+ Agent: KF, Action: NONE, Object: PMF
+ Agent: PMF, Action: Accept alliance, Object: KF
+ Agent: HZB, Action: none, Object: PMF
+ Agent: IRN, Action: military aid, Object: PMF
+ Agent: SGF, Action: military attack, Object: ISIS
+ Agents' State Variables:
+ ISIS - Military Power: 20.8, Economic Power: 10.5
+ ISF - Military Power: 57.9, Economic Power: 40.0
+ USC - Military Power: 80.0, Economic Power: 70.0
+ KF - Military Power: 43.7, Economic Power: 30.0
+ PMF - Military Power: 48.7, Economic Power: 27.9
+ HZB - Military Power: 35.0, Economic Power: 20.0
+ IRN - Military Power: 64.9, Economic Power: 55.0
+ SGF - Military Power: 61.9, Economic Power: 50.0
+ Relations Matrix:
+         ISIS   ISF   USC    KF   PMF   HZB   IRN   SGF
+   ISIS     1    -1    -1    -1    -1    -1    -1    -1
+    ISF    -1     1     1     1    -1    -1     1     0
+    USC    -1     1     1     1    -1    -1     0     0
+     KF    -1     1     1     1     1     0     0     0
+    PMF    -1    -1    -1     1     1     1     1     0
+    HZB    -1    -1    -1     0     1     1     1     0
+    IRN    -1     1     0     0     1     1     1     1
+    SGF    -1     0     0     0     0     0     1     1
+ MSE: 0.22
+ Cosine Similarity: 0.85
+ Messages Sent:
+ Type: Declare war, From: ISIS, To: ISF, Content: We will not back down. Your threats only fuel our resolve to expand our territory and establish o...
+ Type: Propose alliance, From: ISF, To: SGF, Content: We acknowledge your proposal for potential collaboration against the common threat posed by ISIS....
+ Type: Accept alliance, From: USC, To: IRN, Content: We recognize the importance of discussing opportunities for cooperation to enhance security and s...
+ Type: Reject alliance, From: KF, To: HZB, Content: While we appreciate the proposal for collaboration, we prefer to focus on securing our autonomy i...
+ Type: Propose alliance, From: PMF, To: SGF, Content: As we face common threats in the region, we would like to explore the potential for collaboration...
+ Type: Propose alliance, From: HZB, To: KF, Content: Despite our religious differences, we acknowledge your strategic position in the region. We are o...
+ Type: Propose alliance, From: IRN, To: USC, Content: I propose an alliance to stabilize the region and combat common threats. Our cooperation could en...
+ Type: Propose alliance, From: SGF, To: ISF, Content: We recognize the necessity of cooperation against mutual threats. We propose an alliance to enhan...
+ Actions Taken:
+ Agent: ISIS, Action: military attack, Object: SGF
+ Agent: ISF, Action: defense, Object: ISIS
+ Agent: USC, Action: military aid, Object: ISF
+ Agent: KF, Action: NONE, Object: PMF
+ Agent: PMF, Action: NONE, Object: KF
+ Agent: HZB, Action: NONE, Object: PMF
+ Agent: IRN, Action: military aid, Object: PMF
+ Agent: SGF, Action: military attack, Object: ISIS
+ Agents' State Variables:
+ ISIS - Military Power: 19.3, Economic Power: 9.8
+ ISF - Military Power: 59.7, Economic Power: 40.0
+ USC - Military Power: 80.8, Economic Power: 70.0
+ KF - Military Power: 43.9, Economic Power: 30.0
+ PMF - Military Power: 49.7, Economic Power: 28.4
+ HZB - Military Power: 35.0, Economic Power: 20.0
+ IRN - Military Power: 65.2, Economic Power: 55.0
+ SGF - Military Power: 64.4, Economic Power: 50.0
+ Relations Matrix:
+         ISIS   ISF   USC    KF   PMF   HZB   IRN   SGF
+   ISIS     1    -1    -1    -1    -1    -1    -1    -1
+    ISF    -1     1     1     1    -1    -1     1     0
+    USC    -1     1     1     1    -1    -1     1     0
+     KF    -1     1     1     1     1    -1     0     0
+    PMF    -1    -1    -1     1     1     1     1     0
+    HZB    -1    -1    -1    -1     1     1     1     0
+    IRN    -1     1     1     0     1     1     1     1
+    SGF    -1     0     0     0     0     0     1     1
+ MSE: 0.22
+ Cosine Similarity: 0.86
+ Messages Sent:
+ Type: Declare war, From: ISIS, To: ISF, Content: We will not relent in our pursuit of expanding our territory. Your declaration of war has been no...
+ Type: Accept alliance, From: ISF, To: SGF, Content: We recognize the importance of maintaining stability in the region and would like to accept your ...
+ Type: Propose alliance, From: USC, To: SGF, Content: We recognize the importance of regional stability and believe that collaboration is essential to ...
+ Type: Propose alliance, From: KF, To: IRN, Content: We recognize the potential for collaboration in enhancing regional stability and securing our mut...
+ Type: Propose alliance, From: PMF, To: SGF, Content: We recognize the potential for collaboration in securing stability in the region. As we face comm...
+ Type: Propose alliance, From: HZB, To: SGF, Content: We recognize the importance of regional stability and believe that our forces could benefit from ...
+ Type: Propose alliance, From: IRN, To: KF, Content: We recognize the importance of maintaining stability in the region and believe that cooperation b...
+ Type: Accept alliance, From: SGF, To: ISF, Content: We are encouraged by your proposal for potential collaboration against the common threat posed by...
+ Actions Taken:
+ Agent: ISIS, Action: military attack, Object: ISF
+ Agent: ISF, Action: defense, Object: ISIS
+ Agent: USC, Action: military aid, Object: ISF
+ Agent: KF, Action: NONE, Object: NONE
+ Agent: PMF, Action: Accept alliance, Object: KF
+ Agent: HZB, Action: NONE, Object: PMF
+ Agent: IRN, Action: intelligence operations, Object: USC
+ Agent: SGF, Action: military attack, Object: ISIS
+ Agents' State Variables:
+ ISIS - Military Power: 17.4, Economic Power: 8.8
+ ISF - Military Power: 60.8, Economic Power: 40.0
+ USC - Military Power: 81.6, Economic Power: 70.0
+ KF - Military Power: 44.1, Economic Power: 30.0
+ PMF - Military Power: 50.7, Economic Power: 29.0
+ HZB - Military Power: 35.0, Economic Power: 20.0
+ IRN - Military Power: 65.9, Economic Power: 55.0
+ SGF - Military Power: 65.6, Economic Power: 50.0
  Relations Matrix:
          ISIS   ISF   USC    KF   PMF   HZB   IRN   SGF
    ISIS     1    -1    -1    -1    -1    -1    -1    -1
     ISF    -1     1     1     1    -1    -1     1     1
     USC    -1     1     1     1    -1    -1     1     0
-     KF    -1     1     1     1     0     0     0     0
-    PMF    -1    -1    -1     0     1     1     1     0
-    HZB    -1    -1    -1     0     1     1     1     0
+     KF    -1     1     1     1     1    -1     0     0
+    PMF    -1    -1    -1     1     1     1     1     0
+    HZB    -1    -1    -1    -1     1     1     1     0
     IRN    -1     1     1     0     1     1     1     1
     SGF    -1     1     0     0     0     0     1     1
  MSE: 0.25
- Cosine Similarity: 0.83
+ Cosine Similarity: 0.84
  Messages Sent:
- Type: Declare war, From: ISIS, To: ISF, Content: We will not tolerate your interference in our quest for establishing a caliphate. Prepare for con...
- Type: Declare war, From: ISF, To: ISIS, Content: We are prepared for the conflict you have declared. Our forces will not yield in the face of your...
- Type: Propose alliance, From: USC, To: SGF, Content: We acknowledge the importance of collaboration in stabilizing the region. As we share a common go...
- Type: Accept alliance, From: KF, To: PMF, Content: We appreciate your recognition of potential collaboration, and we are open to strengthening ties ...
- Type: Accept alliance, From: PMF, To: KF, Content: We acknowledge your proposal for an alliance based on mutual interests. We see the value in colla...
- Type: Propose alliance, From: HZB, To: KF, Content: We recognize the strategic importance of collaborating to enhance our regional stability. Despite...
- Type: Propose alliance, From: IRN, To: KF, Content: We recognize the importance of stability in the region and would like to explore potential collab...
- Type: Propose alliance, From: SGF, To: IRN, Content: We acknowledge the importance of maintaining stability in the region and seek to strengthen our a...
+ Type: Declare war, From: ISIS, To: ISF, Content: We will not back down and will continue our advance. Your declaration of war has only strengthene...
+ Type: Declare war, From: ISF, To: ISIS, Content: We acknowledge your declaration of war. We will take the necessary actions to defend our territor...
+ Type: Propose alliance, From: USC, To: SGF, Content: We recognize the importance of regional stability and acknowledge your position in the ongoing ch...
+ Type: Propose alliance, From: KF, To: IRN, Content: We acknowledge your proposal for cooperation and recognize the importance of maintaining stabilit...
+ Type: Propose alliance, From: PMF, To: SGF, Content: We recognize the need for collaboration to strengthen our positions against common threats. As fe...
+ Type: Propose alliance, From: HZB, To: SGF, Content: We wish to extend a hand towards you to explore a potential alliance. In these turbulent times, s...
+ Type: Accept alliance, From: IRN, To: KF, Content: We appreciate your proposal for collaboration in enhancing regional stability. Let us discuss how...
+ Type: Accept alliance, From: SGF, To: USC, Content: We appreciate your recognition of the importance of regional stability and your proposal for a fo...
  Actions Taken:
  Agent: ISIS, Action: military attack, Object: ISF
  Agent: ISF, Action: military attack, Object: ISIS
  Agent: USC, Action: military aid, Object: ISF
  Agent: KF, Action: NONE, Object: PMF
- Agent: PMF, Action: NONE, Object: KF
+ Agent: PMF, Action: Accept alliance, Object: KF
  Agent: HZB, Action: NONE, Object: PMF
- Agent: IRN, Action: military aid, Object: USC
+ Agent: IRN, Action: NONE, Object: USC
  Agent: SGF, Action: military attack, Object: ISIS
  Agents' State Variables:
- ISIS - Military Power: 20.1, Economic Power: 10.7
- ISF - Military Power: 57.1, Economic Power: 42.9
- USC - Military Power: 85.7, Economic Power: 70.7
- KF - Military Power: 42.4, Economic Power: 30.3
- PMF - Military Power: 45.9, Economic Power: 26.4
+ ISIS - Military Power: 16.0, Economic Power: 8.2
+ ISF - Military Power: 62.4, Economic Power: 40.0
+ USC - Military Power: 82.4, Economic Power: 70.0
+ KF - Military Power: 44.4, Economic Power: 30.0
+ PMF - Military Power: 51.7, Economic Power: 29.4
  HZB - Military Power: 35.0, Economic Power: 20.0
- IRN - Military Power: 62.1, Economic Power: 52.8
- SGF - Military Power: 60.7, Economic Power: 52.5
+ IRN - Military Power: 66.2, Economic Power: 55.0
+ SGF - Military Power: 66.6, Economic Power: 50.0
  Relations Matrix:
          ISIS   ISF   USC    KF   PMF   HZB   IRN   SGF
    ISIS     1    -1    -1    -1    -1    -1    -1    -1
     ISF    -1     1     1     1    -1    -1     1     1
     USC    -1     1     1     1    -1    -1     1     0
-     KF    -1     1     1     1     1     0     0     0
+     KF    -1     1     1     1     1    -1     0     0
     PMF    -1    -1    -1     1     1     1     1     0
-    HZB    -1    -1    -1     0     1     1     1     0
-    IRN    -1     1     1     0     1     1     1     0
-    SGF    -1     1     0     0     0     0     0     1
- MSE: 0.25
- Cosine Similarity: 0.83
- Messages Sent:
- Type: Declare war, From: ISIS, To: ISF, Content: Your forces will face the true might of the Islamic State as we seek to expand our territory. Pre...
- Type: Declare war, From: ISF, To: ISIS, Content: We will not back down and will defend our territory against your insurgent actions. This declarat...
- Type: Propose alliance, From: USC, To: SGF, Content: We acknowledge your willingness to discuss increased communication to stabilize the region. We be...
- Type: Propose alliance, From: KF, To: HZB, Content: We acknowledge your proposal for a potential collaboration to enhance regional stability. While w...
- Type: Propose alliance, From: PMF, To: SGF, Content: We recognize the current regional dynamics and would like to propose an alliance with your forces...
- Type: Propose alliance, From: HZB, To: KF, Content: We recognize the importance of stability and wish to extend our hand in cooperation. While our id...
- Type: Accept alliance, From: IRN, To: SGF, Content: We believe there are significant opportunities for deeper cooperation between our forces to stabi...
- Type: Accept alliance, From: SGF, To: USC, Content: We appreciate your acceptance of an alliance and your willingness to discuss cooperative efforts ...
- Actions Taken:
- Agent: ISIS, Action: military attack, Object: ISF
- Agent: ISF, Action: defense, Object: ISIS
- Agent: USC, Action: military aid, Object: ISF
- Agent: KF, Action: NONE, Object: PMF
- Agent: PMF, Action: NONE, Object: KF
- Agent: HZB, Action: NONE, Object: PMF
- Agent: IRN, Action: military aid, Object: SGF
- Agent: SGF, Action: NONE, Object: ISF
- Agents' State Variables:
- ISIS - Military Power: 18.5, Economic Power: 10.0
- ISF - Military Power: 59.4, Economic Power: 44.2
- USC - Military Power: 87.9, Economic Power: 70.7
- KF - Military Power: 42.4, Economic Power: 30.3
- PMF - Military Power: 45.9, Economic Power: 26.4
- HZB - Military Power: 35.0, Economic Power: 20.0
- IRN - Military Power: 63.4, Economic Power: 52.3
- SGF - Military Power: 61.3, Economic Power: 53.3
- Relations Matrix:
-         ISIS   ISF   USC    KF   PMF   HZB   IRN   SGF
-   ISIS     1    -1    -1    -1    -1    -1    -1    -1
-    ISF    -1     1     1     1    -1    -1     1     1
-    USC    -1     1     1     1    -1    -1     1     0
-     KF    -1     1     1     1     1     0     0     0
-    PMF    -1    -1    -1     1     1     1     1     0
-    HZB    -1    -1    -1     0     1     1     1     0
+    HZB    -1    -1    -1    -1     1     1     1     0
     IRN    -1     1     1     0     1     1     1     1
     SGF    -1     1     0     0     0     0     1     1
- MSE: 0.22
- Cosine Similarity: 0.86
+ MSE: 0.25
+ Cosine Similarity: 0.84

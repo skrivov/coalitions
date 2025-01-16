@@ -1,3 +1,11 @@
+"""
+main.py
+
+Entry point for running the entire simulation: initializes agents, loads configurations,
+runs the simulation loop, and performs analytics.
+"""
+
+from __future__ import annotations
 import asyncio
 import logging
 import os
@@ -9,133 +17,165 @@ from agent import Agent
 from mail import Mail
 from world import World
 from relations_matrix import RelationsMatrix
-from analytics import Analytics, measure_mse, measure_cosine_similarity, measure_jaccard_similarity, measure_pearson_correlation
+from analytics import Analytics, measure_mse, measure_cosine_similarity
 import custom_logger as logger_module
 
-async def simulation_loop(agents, world, rounds, analytics):
+# Number os simulation steps
+NUM_STEPS = 7
+
+async def simulation_loop(
+    agents: list[Agent],
+    world: World,
+    rounds: int,
+    analytics: Analytics
+) -> None:
+    """
+    The main simulation loop, orchestrating agent actions, message exchanges, and analytics.
+
+    Args:
+        agents (list[Agent]): A list of agents participating in the simulation.
+        world (World): The simulation world that maintains states and relations.
+        rounds (int): The number of simulation rounds to execute.
+        analytics (Analytics): The analytics object used to compare the simulation progress.
+    """
     logger_module.log_agents_intro(agents)
     logger_module.log_relations(world.relations_matrix.relations, agents)
 
     for step in range(rounds):
-        # Record the state of the world
+        # Record the state of the world at the start of each round
         world.record_state()
 
-        # Step 1: Agents read existing public statements and private messages
+        # Step 1: Agents read public statements and private messages, decide on sending new messages
         public_statements = world.mail.read_public_statements()
         message_tasks = [
             agent.decide_and_send_messages(
                 json.dumps(world.get_current_state()),
-                json.dumps([message.to_dict() for message in agent.read_messages(world.mail)]),  # Properly serialized messages
-                json.dumps([statement.to_dict() for statement in public_statements]),  # Properly serialized public statements
-                world.relations_matrix.relations  # Pass the relations matrix here
+                json.dumps([message.to_dict() for message in agent.read_messages(world.mail)]),
+                json.dumps([statement.to_dict() for statement in public_statements]),
+                world.relations_matrix.relations
             ) for agent in agents
         ]
         messages_list = await asyncio.gather(*message_tasks)
-       
-        for agent, messages in zip(agents, messages_list):
+
+        # Send out all decided messages
+        for agent_obj, messages in zip(agents, messages_list):
             for message in messages:
                 world.mail.send(message)
+
+        # Log the messages that were sent
         logger_module.log_messages([msg for messages in messages_list for msg in messages])
 
-        # Step 2: Agents take actions based on the state of the world, private messages, and public statements
+        # Step 2: Agents take actions based on the world state
         action_tasks = [
-            agent.act(  # Ensure act() is awaited
+            agent.act(
                 json.dumps(world.get_current_state()),
                 json.dumps([message.to_dict() for message in agent.read_messages(world.mail)]),
                 json.dumps([statement.to_dict() for statement in public_statements])
-            ) for agent in agents
+            )
+            for agent in agents
         ]
-         
-
         latest_actions = await asyncio.gather(*action_tasks)
-        for agent, action in zip(agents, latest_actions):
-            world.add_action(agent.alias, action)
+
+        # Add these actions to the current state
+        for agent_obj, action in zip(agents, latest_actions):
+            world.add_action(agent_obj.alias, action)
+
+        # Log the actions taken
         logger_module.log_actions(latest_actions)
 
-          # Step 3: Finalize messages and public statements
+        # Step 3: Finalize messages and public statements
         world.mail.finalize()
 
-
-        # Step 4: Process messages and public statements
+        # Step 4: Process private messages and public statements
         world.process_messages()
         world.process_public_statements(public_statements)
 
-      
-
-        # Step 5: Update world state based on interactions
+        # Step 5: Apply outcomes/updates based on the decisions
         updates = await world.decide(latest_actions)
         world.apply_updates(updates)
         logger_module.log_agent_state(agents)
 
-        # Step 6: Compute and log similarity to end state
-        current_matrix = world.relations_matrix.to_matrix(world.relations_matrix.relations.keys())
+        # Step 6: Log and compare current matrix to the end matrix
+        current_matrix = world.relations_matrix.to_matrix(
+            list(world.relations_matrix.relations.keys())
+        )
         logger_module.log_relations(world.relations_matrix.relations, agents)
         analytics_results = analytics.compare_current_to_end(current_matrix)
-       
         logger_module.log_analytics(analytics_results, analytics, current_matrix, step)
 
-if __name__ == "__main__":
-    # Initialize OpenAI client
+
+def main() -> None:
+    """
+    Main entry point for setting up the simulation environment, loading configurations,
+    and running the event loop to drive the simulation.
+    """
     load_dotenv()
     client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-    # Initialize mail system
     mail = Mail()
 
-    # Load configuration
     script_dir = path.dirname(path.abspath(__file__))
     agents_file_path = path.join(script_dir, "config/agents.json")
     simulation_file_path = path.join(script_dir, "config/simulation.json")
 
-    with open(agents_file_path) as f:
+    with open(agents_file_path, "r", encoding="utf-8") as f:
         agent_configs = json.load(f)
 
-    with open(simulation_file_path) as f:
+    with open(simulation_file_path, "r", encoding="utf-8") as f:
         simulation_config = json.load(f)
     use_full_identity = simulation_config.get("use_full_identity", False)
 
-    # Load relations matrix
     relations_file_path = path.join(script_dir, "config/relations_start.json")
     relations_matrix = RelationsMatrix(relations_file_path)
 
-    # Initialize custom logger
-    logger_module.setup_logger(log_level=logging.DEBUG, log_file='simulation.log')
+    logger_module.setup_logger(log_level=logging.DEBUG, log_file="simulation.log")
 
-    # Initialize analytics with desired measures
     measures = {
         "MSE": measure_mse,
-        "Cosine Similarity": measure_cosine_similarity 
-        
+        "Cosine Similarity": measure_cosine_similarity
+        # You can add more measures here if desired
     }
     relations_end_file_path = path.join(script_dir, "config/relations_end.json")
     analytics = Analytics(relations_file_path, relations_end_file_path, measures, output_dir="output")
 
-    # Create a dictionary mapping aliases to details (name and identity) for known entities
-    known_entities = {agent["alias"]: {"name": agent["name"], "identity": agent["identity"]} for agent in agent_configs}
+    known_entities = {
+        agent_cfg["alias"]: {
+            "name": agent_cfg["name"],
+            "identity": agent_cfg["identity"]
+        } for agent_cfg in agent_configs
+    }
 
-    # Initialize world
+    # Initialize all agents
+    agents = [
+        Agent(
+            alias=a["alias"],
+            name=a["name"],
+            agent_type=a["type"],
+            identity=a["identity"],
+            available_actions=a["available_actions"],
+            military_power=a["military_power"],
+            economic_power=a["economic_power"],
+            goal=a["goal"],
+            description=a["description"],
+            client=client,
+            use_full_identity=use_full_identity,
+            known_entities=known_entities
+        )
+        for a in agent_configs
+    ]
+
+    # Create the World
     world = World(
-        agents=[
-            Agent(
-                alias=a["alias"],
-                name=a["name"],
-                agent_type=a["type"],
-                identity=a["identity"],
-                available_actions=a["available_actions"],
-                military_power=a["military_power"],
-                economic_power=a["economic_power"],
-                goal=a["goal"],
-                description=a["description"],
-                client=client,
-                use_full_identity=use_full_identity,
-                known_entities=known_entities
-            ) for a in agent_configs
-        ],
+        agents=agents,
         relations_matrix=relations_matrix,
         mail=mail,
         logger=logger_module,
         client=client
     )
 
-    # Run simulation
-    asyncio.run(simulation_loop(list(world.agents.values()), world, 5, analytics))
+    # Run the simulation asynchronously
+    asyncio.run(simulation_loop(agents, world, NUM_STEPS, analytics))
+
+
+if __name__ == "__main__":
+    main()
